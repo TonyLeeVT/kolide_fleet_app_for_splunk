@@ -1,0 +1,101 @@
+apiVersion: v1
+kind: pack
+spec:
+  description: Query all users
+  id: 1
+  name: users pack
+  queries:
+  - description: ""
+    interval: 60
+    name: Users Query
+    platform: ""
+    query: users query
+    removed: false
+    snapshot: true
+    version: ""
+  targets:
+    labels: null
+---
+apiVersion: v1
+kind: pack
+spec:
+  description: Query the version of osquery
+  id: 2
+  name: osquery_info pack
+  queries:
+  - description: ""
+    interval: 120
+    name: Osquery_info Query
+    platform: ""
+    query: osquery_info query
+    removed: false
+    snapshot: true
+    version: ""
+  targets:
+    labels: null
+---
+apiVersion: v1
+kind: pack
+spec:
+  description: Pack for process_open_sockets
+  id: 4
+  name: process_open_sockets pack
+  queries:
+  - description: ""
+    interval: 120
+    name: process_open_sockets query
+    platform: ""
+    query: process_open_sockets query
+    removed: false
+    snapshot: true
+    version: ""
+  targets:
+    labels: null
+---
+apiVersion: v1
+kind: pack
+spec:
+  description: pack for programs
+  id: 5
+  name: programs pack
+  queries:
+  - description: ""
+    interval: 60
+    name: programs query
+    platform: ""
+    query: programs query
+    removed: false
+    snapshot: true
+    version: ""
+  targets:
+    labels: null
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Query all users
+  name: users query
+  query: SELECT * FROM users
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Query the version of osquery
+  name: osquery_info query
+  query: SELECT * FROM osquery_info
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Query process_open_sockets
+  name: process_open_sockets query
+  query: SELECT DISTINCT proc.name, proc.path, proc.cmdline, pos.pid, pos.protocol,
+    pos.local_address, pos.local_port, pos.remote_address, pos.remote_port FROM process_open_sockets
+    AS pos JOIN processes AS proc ON pos.pid = proc.pid;
+---
+apiVersion: v1
+kind: query
+spec:
+  description: query for programs
+  name: programs query
+  query: SELECT * FROM programs
