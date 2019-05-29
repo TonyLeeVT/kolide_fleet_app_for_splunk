@@ -8,6 +8,7 @@ Part I - Local Agent Interaction:  http://securitysynapse.blogspot.com/2019/05/o
 Part II - Kolide Centralized Management:  http://securitysynapse.blogspot.com/2019/05/osquery-part-ii-kolide-centralized.html  
 Part III - Queries and Packs:  http://securitysynapse.blogspot.com/2019/05/osquery-part-iii-queries-and-packs.html  
 Part IV - Fleet Control Using fleetctl - http://securitysynapse.blogspot.com/2019/05/osquery-part-iv-fleet-control-using-fleetctl.html  
+Part V - Integration - http://securitysynapse.blogspot.com/2019/05/osquery-part-v-integration.html
 
 To import the file on this github repo into Kolide Fleet, perform the following:  
   
